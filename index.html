@@ -155,6 +155,9 @@
                 
                 if (selectedItems.length > 0) text += `--------------------\n`;
                 
+                // Add Total Items Count here in the text
+                text += `📦 商品總件數: ${totalCount} 件\n`;
+
                 if (shippingUnitsA > 0) {
                     text += `運費 ($210 x ${shippingUnitsA}件): ${formatMoney(shippingTotalA)}\n`;
                 }
@@ -361,6 +364,12 @@
 
                             {/* Totals Summary */}
                             <div className="space-y-1">
+                                {/* 新增：總件數顯示 */}
+                                <div className="flex justify-between text-slate-700 text-sm font-bold border-b border-slate-100 pb-1 mb-1">
+                                    <span>商品總件數</span>
+                                    <span>{totalCount} 件</span>
+                                </div>
+
                                 <div className="flex justify-between text-slate-500 text-xs">
                                     <span>商品小計</span>
                                     <span>{formatMoney(productTotal)}</span>
