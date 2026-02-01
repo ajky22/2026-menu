@@ -16,8 +16,8 @@
         }
     }
     </script>
-    <!-- 載入 Babel (讓瀏覽器看懂 React 程式碼) -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- 載入 Babel (鎖定穩定版本 7.23.6 以解決 targets.esmodules 錯誤) -->
+    <script src="https://unpkg.com/@babel/standalone@7.23.6/babel.min.js"></script>
     
     <style>
         /* 隱藏捲軸但保留功能，讓畫面更乾淨 */
@@ -46,14 +46,14 @@
 <body class="bg-slate-100">
     <div id="root"></div>
 
-    <script type="text/babel" data-type="module">
+    <script type="text/babel" data-type="module" data-presets="react">
         import React, { useState } from 'react';
         import { createRoot } from 'react-dom/client';
         import { ShoppingCart, RefreshCcw, Trash2, Plus, Minus, Package, Calculator, Copy, Check, Coins } from 'lucide-react';
 
         const MENU_ITEMS = [
             { id: 1, name: '土窯雞', price: 600 },
-            { id: 2, name: '清燉鱸魚湯', price: 600 },
+            { id: 2, name: '清燉鱷魚湯', price: 600 },
             { id: 3, name: '雞仔豬肚鱉', price: 600 },
             { id: 4, name: '香酥鴨', price: 550 },
             { id: 5, name: '藥膳土雞湯', price: 500 },
